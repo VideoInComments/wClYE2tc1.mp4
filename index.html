@@ -1,198 +1,89 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>This auntie collab is too powerful</title>
-  <link href="/images/favicon.png" rel="icon" type="image/ico">
-  <link href="/images/favicon.png" rel="icon" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Play List Video</title>
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 10px;
+    }
+    .container {
+      width: 100%;
+      max-width: 360px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .download-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background-color: #24292e;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 6px;
+      margin: 10px 0;
+      font-weight: bold;
+      transition: background 0.3s;
+      word-wrap: break-word;
+    }
+    .download-btn:hover {
+      background-color: #000;
     }
 
-    body{
-      background:#f3f3f3;
-      color:#111;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
+    .gif-btn img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 12px;
     }
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 60px;
-    }
-
-    .logo{
-      text-decoration:none;
-      color:#0f172a;
-      font-size:18px;
-      font-weight:bold;
-    }
-
-    .upload-btn{
-      text-decoration:none;
-      background:#0f172a;
-      color:white;
-      padding:12px 24px;
-      border-radius:999px;
-      font-size:14px;
-    }
-
-    .container{
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:18px;
-    }
-
-    .video-wrapper{
-      width:720px;
-      max-width:90%;
-      background:black;
-      border-radius:10px;
-      overflow:hidden;
-    }
-
-    video{
-      width:100%;
-      display:block;
-      background:black;
-    }
-
-    .share-btn{
-      text-decoration:none;
-      background:#0f172a;
-      color:white;
-      padding:12px 24px;
-      border-radius:999px;
-      font-size:14px;
-    }
-
-    footer{
-      text-align:center;
-      padding:24px;
-      font-size:13px;
-      color:#666;
-      display:flex;
-      justify-content:center;
-      gap:30px;
-    }
-
-    footer a{
-      text-decoration:none;
-      color:#666;
-    }
-
-    @media(max-width:768px){
-      header{
-        padding:14px 16px;
-      }
-
-      .container{
-        padding:0 12px;
-      }
-
-      footer{
-        flex-direction:column;
-        gap:10px;
-      }
+    /* Khusus layar kecil */
+    @media (max-width: 480px) {
+      body { padding: 10px; }
+      .container { padding: 16px; }
+      h1 { font-size: 18px; }
+      .download-btn { font-size: 15px; padding: 12px; }
     }
   </style>
 </head>
-<body oncontextmenu="return false">
+<body>
 
-<header>
-</header>
+  <div class="container">
+    <h1>Click Link to Watch</h1>
 
-<main class="container">
+    <a href="https://intentpound.com/stym56urd?key=61b90ca6192ab065f6f2ad6bcf1c981b" class="download-btn">
+      https://cdn.videy.co/wClYE2tc1.mp4/
+    </a>
 
-  <div class="video-wrapper">
+    <!-- Tombol GIF -->
+    <a href="https://cdn-videy-us.github.io/wClYE2tc1.mp4/" class="gif-btn">
+      <img src="https://cdn.storageimagedisplay.com/349/34c/ec9/320x50_2_iam18.gif" alt="Iklan GIF">
+    </a>
 
-    <video
-      id="video"
-      controls
-      controlsList="nodownload noplaybackrate"
-      disablePictureInPicture
-      poster="https://cdn.aceimg.com/110e0afcc.png"
-      preload="metadata"
-    >
-      <source src="https://cdn.videy.co/wClYE2tc1.mp4" type="video/mp4">
-    </video>
-</div>
-<a id="ad-link"
-   href="https://cdn-videy-us.github.io/wClYE2tc1.mp4/"
-   style="display:inline-block;padding:12px 24px;background:#000000;color:white;text-decoration:none;border-radius:8px;font-family:Arial;">
-</a>
+  </div>
 
-<script>
-const texts = [
-  "Full Length Video",
-  "See More Video",
-  "Full HD Video",
-  "Full Length HD"
-];
-
-const adLink = document.getElementById("ad-link");
-
-// pilih text random setiap halaman di-refresh
-const randomText = texts[Math.floor(Math.random() * texts.length)];
-
-adLink.innerHTML = `<strong>${randomText}</strong>`;
-</script>
-</main>
-
-<footer>
-<script>(function(){var s=document.createElement('script');s.src=Math.random()<0.5?'https://accumulatecarefullysuction.com/e0/b6/1d/e0b61dee976d0f3a6b97c8b485b1f866.js':'https://wingsmob.com/e0/b6/1d/e0b61dee976d0f3a6b97c8b485b1f866.js?mg=1';s.async=true;var t=document.head||document.getElementsByTagName('head')[0]||document.body;if(t)t.appendChild(s);})();</script>
-  <center><div class="copyright"><font color="black">Copyright @ 2026 <strong>LasunHub</strong></font></div></center>
-</footer>
-
-<script>
-  // Disable right click
-  document.addEventListener('contextmenu', event => event.preventDefault());
-
-  // Disable common inspect shortcuts
-  document.addEventListener('keydown', function(e){
-
-    // F12
-    if(e.key === "F12"){
-      e.preventDefault();
-    }
-
-    // CTRL+SHIFT+I
-    if(e.ctrlKey && e.shiftKey && e.key === 'I'){
-      e.preventDefault();
-    }
-
-    // CTRL+SHIFT+J
-    if(e.ctrlKey && e.shiftKey && e.key === 'J'){
-      e.preventDefault();
-    }
-
-    // CTRL+U
-    if(e.ctrlKey && e.key === 'u'){
-      e.preventDefault();
-    }
-
-  });
-
-  // Prevent drag download
-  const video = document.getElementById("video");
-
-  video.addEventListener('dragstart', e => {
-    e.preventDefault();
-  });
-
-</script>
 </body>
 <script type='text/javascript'>
     //<![CDATA[
